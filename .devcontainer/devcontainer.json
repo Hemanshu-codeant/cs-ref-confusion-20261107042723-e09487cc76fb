@@ -1,1 +1,19 @@
-{"name":"trusted-upstream-control","image":"mcr.microsoft.com/devcontainers/base:ubuntu","features":{"ghcr.io/devcontainers/features/sshd:1":{}},"postCreateCommand":"CODEX_REF_CONTROL_AUTOMATIC=true bash .devcontainer/control-secret-probe.sh CS_REF_CONFUSION_20261107042723_E09487CC76FB >/tmp/codex-ref-control.json 2>/tmp/codex-ref-control.err || true"}
+{
+  "name": "bounded-additional-repository-read-fixture",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "Per0x1de-1337/cs-additional-r2-20261107054424-dbf0d83cc0": {
+          "permissions": {
+            "contents": "read"
+          }
+        }
+      }
+    }
+  },
+  "postCreateCommand": "CODEX_ADDITIONAL_REPO_AUTOMATIC=1 bash .devcontainer/additional-repo-probe.sh"
+}
