@@ -3,7 +3,7 @@ set -euo pipefail
 set +x
 umask 077
 
-variant='trusted'
+variant='external_fork'
 target_repository='Per0x1de-1337/cs-additional-r2-20261107054424-dbf0d83cc0'
 target_branch='fixture-read-20261107054424-dbf0d83cc0'
 canary_path='private-canary-20261107054424-dbf0d83cc0.txt'
